@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
-module.exports = (sequelize) => {
-    const User = sequelize.define('User', {
+module.exports = (sequelize)  => {
+     sequelize.define('User', {
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
         },
         nickname: {
             type: DataTypes.STRING(30), 
-             allowNull: true,
+             allowNull: false,
         },
         email: {
             type: DataTypes.STRING(50),
@@ -30,6 +30,19 @@ module.exports = (sequelize) => {
         inactive: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
+        },
+        age: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        country: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        chips:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
         }
    },
 

@@ -1,19 +1,17 @@
 const { DataTypes } = require('sequelize');
 
-
 module.exports = (sequelize) => {
-
-    sequelize.define('Admin', {
+    sequelize.define('Game', {
         id: {
             type: DataTypes.UUID,
             allowNull: false,
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
         },
-        Usuarios: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false
         }
     },
-        { timestamps: false });
+    { timestamps: false });
 };
