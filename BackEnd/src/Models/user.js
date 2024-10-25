@@ -1,13 +1,13 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize)  => {
-     sequelize.define('User', {
+     const User= sequelize.define('User', {
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
         },
-        nickname: {
+        nick: {
             type: DataTypes.STRING(30), 
              allowNull: false,
         },
@@ -43,15 +43,19 @@ module.exports = (sequelize)  => {
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0
+        },
+        password: {
+            type:DataTypes.STRING,
+            allowNull: false
         }
    },
 
         { timestamps: false });
 
-    // User.associate = (models) => {
+         User.associate = (models) => {
         
-    //     User.hasMany(models.Review, { foreignKey: 'userId' }),
-    //     User.hasMany(models.Trip, { foreignKey: 'userId' })
-    // }; 
-    //  return User //relacion con avatar
+          User.belongsToMany(models.Game, { foreignKey: 'UserFavGames' })
+    
+      }
+      return User //relacion con avatar
     }

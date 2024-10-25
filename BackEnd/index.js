@@ -8,4 +8,4 @@ conn.sync({ force: false }).then(() => {
 server.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 })
-}).catch(error => console.error(error))
+}).catch(error => console.error(error)) 

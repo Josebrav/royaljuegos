@@ -1,27 +1,29 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Image, Text } from "@chakra-ui/react";
+import banner1 from '../../assets/IMG_3872.jpg'
 
 export default function () {
     return(
         <Box
-        w={"75%"} /* La caja azul ocupa el 80% del ancho de la pantalla */
-        h={"300px"}
-        bgColor={"#709c8a"}
-        m={"0 auto"} /* Centrar la caja azul horizontalmente */
-        mt={"1%"}
-         /* Usar marginBottom directamente */
-        display={"flex"} /* Usamos flex para alinear el contenido interno */
-        justifyContent={"center"} /* Centrar el contenido de la caja azul */
-        alignItems={"center"}
+        w={"100%"}
+        h={"390px"}
+        
+        // bgColor={"rgba(154, 255, 59, 0.3)"} /* Fondo con 80% de transparencia */
+        m={"0 auto"} /* Centrar el contenedor horizontalmente */
+        borderRadius={"10px"}
+        display={"flex"} 
+        justifyContent={"center"} /* Centrar contenido horizontalmente */
+        alignItems={"center"} /* Centrar contenido verticalmente */
       >
             <Box 
-               
-              p={"20px"} /* Agregamos padding a la caja amarilla */
-              w={"80%"} /* La caja amarilla ocupa el 80% del ancho de la caja azul */
-              m={"10%"} /* Margen del 10% dentro de la caja azul */
+              w={"80%"}
+              display={"flex"} /* Flex para centrar la imagen */
+              justifyContent={"center"} /* Asegura que la imagen esté centrada */
             >
-              <Text
-              textAlign={"center"}
-              fontSize={"80px"}>Novedades</Text>
+              <Image
+              borderRadius={"10px"}
+              maxW={"90%"} /* Se asegura que la imagen no exceda el ancho del contenedor */
+              src={banner1}
+              />
             </Box>
         </Box>
     )

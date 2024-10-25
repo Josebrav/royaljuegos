@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Container
-    bgColor={"#cdffb6"}
+    bgColor={"#a4a4a4"}
     maxW="100%"  w="100%"
     maxH="100%" h="100%"
     // bgSize="cover"

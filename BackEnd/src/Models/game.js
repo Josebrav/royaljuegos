@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    sequelize.define('Game', {
+    const Game = sequelize.define('Game', {
         id: {
             type: DataTypes.UUID,
             allowNull: false,
@@ -14,4 +14,11 @@ module.exports = (sequelize) => {
         }
     },
     { timestamps: false });
+
+    Game.associate = (models) => {
+        
+        Game.belongsToMany(models.User, { foreignKey: 'UserFavGames' })
+  
+    }
+    return Game //relacion con avatar
 };
